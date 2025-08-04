@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Personal Notes App
+
+A simple, elegant, and responsive notes application built with **Next.js 15.4 (App Router)**, **React**, and **Tailwind CSS - 13.4.14**.  
+This project features dark mode support, localStorage persistence, and clean UI with icon-based controls.
+
+## Features
+
+- **Add and delete notes** dynamically  
+- **Dark and light mode toggle** with theme persistence  
+- Notes are **saved locally in browser's localStorage** to persist between sessions  
+- Responsive UI designed with **Tailwind CSS**    
+- Modern icons integrated via **Lucide React**  
+- Clean, modular code structure following Next.js best practices
+
+## Technologies Used
+
+- [Next.js 15.4](https://nextjs.org/) (App Router)  
+- [React 18](https://reactjs.org/)  
+- [Tailwind CSS](https://tailwindcss.com/)  
+- [Lucide React](https://lucide.dev/) for icons  
+- Browser **localStorage** API for data persistence
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Node.js (v16 or newer recommended)  
+- npm or yarn  
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Clone the repository  
+   ```bash
+   git clone https://github.com/KalharaBatangala/personal-notes-webapp.git
+   cd personal-notes-webapp
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. Install dependencies
 
-## Learn More
+    ```bash
+    npm install
+    # or
+    yarn install
 
-To learn more about Next.js, take a look at the following resources:
+3. Run the development server
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+    ```bash
+    npm run dev
+    #or 
+    yarn dev
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+4. Open http://localhost:3000 in your browser
 
-## Deploy on Vercel
+## Project Structure
+/app
+  ├── layout.tsx           # Root layout with ThemeProvider
+  ├── page.tsx             # Main Notes page (UI + logic)
+/components
+  ├── ThemeProvider.tsx    # Dark mode toggle & theme management
+  ├── Navbar.tsx           # (Optional) Navigation bar component
+/public
+  ├── favicon.ico          # Site favicon
+  ├── apple-touch-icon.png # iOS home screen icon
+  ├── demo-screenshot.png  # Demo screenshot (replace as needed)
+tailwind.config.js         # Tailwind CSS config
+postcss.config.js          # PostCSS config
+package.json               # Project metadata and scripts
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Demo
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+![Demo Screenshot](./components/ss1.png)
+![Demo Screenshot](./components/ss2.png)

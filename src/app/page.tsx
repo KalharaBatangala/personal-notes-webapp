@@ -57,21 +57,20 @@ export default function Home() {
       </div>
 
       {/* Note list or empty message */}
-      {notes.map((note, index) => (
-      <li
-        key={index}
-        className="flex justify-between items-center p-4 bg-white dark:bg-gray-800 rounded shadow"
+      <ul className="space-y-2">
+  {notes.map((note, index) => (
+    <li key={index} className="flex justify-between items-center p-4 bg-white dark:bg-gray-800 rounded shadow">
+      <span>{note}</span>
+      <button
+        onClick={() => handleDeleteNote(index)}
+        className="text-red-600 hover:text-red-800 font-semibold"
       >
-        <span>{note}</span>
-        <button
-          onClick={() => handleDeleteNote(index)}
-          className="text-red-600 hover:text-red-800 font-semibold"
-        >
-          <Trash2 size={20} className="mt-1" />
+        <Trash2 size={20} className="mt-1" />
+      </button>
+    </li>
+  ))}
+</ul>
 
-        </button>
-      </li>
-    ))}
 
     </div>
   )

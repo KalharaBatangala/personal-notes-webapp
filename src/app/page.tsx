@@ -1,6 +1,8 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { Trash2 } from 'lucide-react'
+
 
 export default function Home() {
   const [notes, setNotes] = useState<string[]>([])
@@ -22,9 +24,16 @@ export default function Home() {
   // Add a new note
   const handleAddNote = () => {
     if (newNote.trim() === '') return // ignore empty notes
-    setNotes([newNote, ...notes]) // add new note to top
+    setNotes([newNote, ...notes]) 
     setNewNote('') // clear the input
   }
+
+  // Delete a note
+  const handleDeleteNote = (indexToDelete: number) => {
+  const updatedNotes = notes.filter((_, index) => index !== indexToDelete)
+  setNotes(updatedNotes)
+}
+
 
   return (
     <div className="space-y-6">
@@ -48,17 +57,22 @@ export default function Home() {
       </div>
 
       {/* Note list or empty message */}
-      {notes.length === 0 ? (
-        <p className="text-gray-500">No notes yet. Start by creating one!</p>
-      ) : (
-        <ul className="space-y-2">
-          {notes.map((note, index) => (
-            <li key={index} className="p-4 bg-white dark:bg-gray-800 rounded shadow">
-              {note}
-            </li>
-          ))}
-        </ul>
-      )}
+      {notes.map((note, index) => (
+      <li
+        key={index}
+        className="flex justify-between items-center p-4 bg-white dark:bg-gray-800 rounded shadow"
+      >
+        <span>{note}</span>
+        <button
+          onClick={() => handleDeleteNote(index)}
+          className="text-red-600 hover:text-red-800 font-semibold"
+        >
+          <Trash2 size={20} className="mt-1" />
+
+        </button>
+      </li>
+    ))}
+
     </div>
   )
 }

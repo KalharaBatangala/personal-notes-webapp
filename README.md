@@ -15,7 +15,7 @@ This project features dark mode support, localStorage persistence, and clean UI 
 ## Technologies Used
 
 - [Next.js 15.4](https://nextjs.org/) (App Router)  
-- [React 18](https://reactjs.org/)  
+- [React 19.1](https://reactjs.org/)  
 - [Tailwind CSS](https://tailwindcss.com/)  
 - [Lucide React](https://lucide.dev/) for icons  
 - Browser **localStorage** API for data persistence
@@ -24,7 +24,7 @@ This project features dark mode support, localStorage persistence, and clean UI 
 
 ### Prerequisites
 
-- Node.js (v16 or newer recommended)  
+- Node.js (v18 or newer recommended)  
 - npm or yarn  
 
 ### Installation
@@ -50,22 +50,8 @@ This project features dark mode support, localStorage persistence, and clean UI 
 
 4. Open http://localhost:3000 in your browser
 
-## Project Structure
-/app
-  ├── layout.tsx           # Root layout with ThemeProvider
-  ├── page.tsx             # Main Notes page (UI + logic)
-/components
-  ├── ThemeProvider.tsx    # Dark mode toggle & theme management
-  ├── Navbar.tsx           # (Optional) Navigation bar component
-/public
-  ├── favicon.ico          # Site favicon
-  ├── apple-touch-icon.png # iOS home screen icon
-  ├── demo-screenshot.png  # Demo screenshot (replace as needed)
-tailwind.config.js         # Tailwind CSS config
-postcss.config.js          # PostCSS config
-package.json               # Project metadata and scripts
 
 ## Demo
 
-![Demo Screenshot](./components/ss1.png)
-![Demo Screenshot](./components/ss2.png)
+![Demo Screenshot](./src/screenshots/ss1.png)
+![Demo Screenshot](./src/screenshots/ss2.png)
